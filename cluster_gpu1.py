@@ -122,8 +122,8 @@ def spmm_measure_step(psi0, psi1, q, mask_val, outcome_rand, s_strength, n_qubit
     chosen_P_diag = jnp.where(outcome_is_plus, P_plus_diag, P_minus_diag)
     p_chosen = jnp.where(outcome_is_plus, p_plus, 1.0 - p_plus)
 
-    safe_p = jnp.where(p_chosen == 0.0, 1.0, p_chosen)
-    scaled_diag = chosen_P_diag / jnp.sqrt(safe_p)
+    
+    scaled_diag = chosen_P_diag / jnp.sqrt(p_chosen)
 
     identity_diag = jnp.ones(2, dtype=psi0.dtype)
     applied_diag = jnp.where(mask_val, scaled_diag, identity_diag)
@@ -151,7 +151,7 @@ def compute_cost(psi0, psi1, n_qubits):
     return 2.0 * jnp.vdot(psi1_r, cost_psi).real
 
 def _hea1_single_sample(key, s_strength, p_meas, n_qubits):
-    n_layers = n_qubits * 3
+    n_layers = n_qubits * 5
     mid_grad_idx = n_qubits // 2
     
     k_rot, k_param, k_mask, k_outcome = jax.random.split(key, 4)
@@ -213,10 +213,7 @@ def _hea1_single_sample(key, s_strength, p_meas, n_qubits):
         for q in range(n_qubits):
             p0, p1 = spmm_measure_step(p0, p1, q, m_mask[q], m_out[q], s_strength, n_qubits)
 
-        true_norm = jnp.linalg.norm(p0)
-        safe_true_norm = jnp.where(true_norm == 0.0, 1.0, true_norm)
-        p0 = p0 / safe_true_norm
-        p1 = p1 / safe_true_norm
+        
 
         return (p0, p1), None
         
@@ -322,8 +319,8 @@ def run_cluster_sweep(output_dir="data_mipt", seed=0, target_mem_bytes=12.0e9, o
     
     os.makedirs(output_dir, exist_ok=True)
 
-    p_range = [0.0, 0.02,  0.04,  0.06,  0.08, 0.1,  0.12, 0.14, 0.16]
-    s_strengths = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]
+    p_range = [0.0, 0.02, 0.04, 0.06, 0.08,  0.10,  0.12,  0.14,  0.16,  0.18,  0.2,  0.22,  0.24]
+    s_strengths = [1.0, 0.5]
     system_sizes = list(range(4, 17))  
 
     if override_samples is not None:
