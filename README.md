@@ -43,4 +43,26 @@ $$
 $$
 
 ## Code Implementation
-*(Content pending code snippet)*
+
+The simulation is implemented using JAX for high-performance GPU acceleration and XLA compilation. To ensure scalability and maintain memory efficiency, the simulator avoids constructing full density matrices. Instead, it employs a tensor-network-style state vector approach. 
+
+### State Evolution and Gradient Tracking
+At the core of the algorithm, we evaluate the quantum circuit for a fixed measurement probability ($p$), number of qubits ($N$), and SPMM softening strength ($s$). For each sample (or shot), we randomly generate the rotation parameters, measurement configurations, and quantum jump outcomes. 
+
+To calculate the analytical gradient described in the MILT framework, the code simultaneously tracks and updates two unnormalized state vectors throughout the circuit:
+* **`psi0`**: The standard, unperturbed state vector corresponding to $\vert{}\tilde{\psi}_{\mathbf{M}}\rangle$.
+* **`psi1`**: The derivative state vector corresponding to $\vert{}\partial_j \tilde{\psi}_{\mathbf{M}}\rangle$, which applies the differentiated unitary generator at the specific target parameter index. 
+
+By propagating both states through the exact same measurement trajectory and evaluating them at the end of the circuit using the `compute_cost` function, we directly compute the unnormalized drift term required for the mixed cost function gradient.
+
+### Efficient Gate Operations
+Applying full $2^N \times 2^N$ unitary matrices to the state vector would be computationally prohibitive. Instead, single-qubit and two-qubit operations (`apply_1q_gate`, `apply_cnot_adjacent`) are implemented via tensor reshaping. 
+
+By reshaping the 1D state array into a 3D tensor of the form `(dim_left, gate_dim, dim_right)`, we isolate the target qubit's subspace. The gate operations are then applied locally as vectorized linear combinations of the tensor slices. This strictly bounds memory usage and significantly accelerates execution. Furthermore, entire blocks of parameterized rotation matrices are generated simultaneously using `jax.vmap` (O(1) graph compression), taking full advantage of JAX's accelerated linear algebra compiler.
+
+### Optimized SPMM Probability Calculation
+The implementation of the Softened Projective Measurement Model requires calculating the Born probabilities for the two possible outcomes. The theoretical definition requires computing the expectation value $\langle \psi \vert{} \sigma_z \vert{} \psi \rangle$. 
+    
+In our optimized `spmm_measure_step` function, this calculation is highly streamlined. We know that the expectation of $\sigma_z$ can be expressed as the difference in probabilities of the computational basis states ($p_0 - p_1$), and that the total probability in that local subspace is $p_0 + p_1 = 1$. By substituting these relationships into the theoretical SPMM probability equation, we can calculate the probability of the "+" outcome (`p_plus`) directly using the squared diagonal elements of the measurement operator: `prob_0 * P_plus_sq[0] + prob_1 * P_plus_sq[1]`. 
+
+This mathematically equivalent substitution allows us to compute the required trajectory probabilities using purely scalar arithmetic, completely bypassing the need for costly matrix multiplications during the sequential measurement steps.
