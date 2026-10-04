@@ -66,3 +66,11 @@ The implementation of the Softened Projective Measurement Model requires calcula
 In our optimized `spmm_measure_step` function, this calculation is highly streamlined. We know that the expectation of $\sigma_z$ can be expressed as the difference in probabilities of the computational basis states ($p_0 - p_1$), and that the total probability in that local subspace is $p_0 + p_1 = 1$. By substituting these relationships into the theoretical SPMM probability equation, we can calculate the probability of the "+" outcome (`p_plus`) directly using the squared diagonal elements of the measurement operator: `prob_0 * P_plus_sq[0] + prob_1 * P_plus_sq[1]`. 
 
 This mathematically equivalent substitution allows us to compute the required trajectory probabilities using purely scalar arithmetic, completely bypassing the need for costly matrix multiplications during the sequential measurement steps.
+
+## Repository Structure
+
+* **`cluster_gpu1.py`**: The JAX implementation used for cluster simulations. This is the script detailed in the "Code Implementation" section above, featuring tensor reshaping and XLA compilation.
+* **`laptop_milt_analysis_var.py`**: The initial, foundational codebase.
+* **`data_anlysis/`**: This directory contains the raw output data generated from the cluster runs, along with the subsequent evaluations.
+    * **`analysis1.ipynb`**: The primary Jupyter Notebook containing the data processing code and the final plots presented in our recent meeting. 
+    * **`sweep_results_N4_16_32bit_3N.pkl`** & **`sweep_config_metadata_3N_5k.txt`**: The raw output data files and metadata configurations produced by the cluster sweeps.
