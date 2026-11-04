@@ -1,0 +1,24 @@
+====================================================================
+   METHOD 1 WEAK-MEASUREMENT (s, p) XXZ SCALING STUDY - CONFIG      
+====================================================================
+Timestamp               : 2026-11-04 08:56:44
+Output Directory        : data_milt
+Detected JAX Devices    : [cuda(id=0)] (Single-GPU)
+Numerical Precision     : float32 / complex64
+--------------------------------------------------------------------
+CIRCUIT & PHYSICAL HYPERPARAMETERS:
+  Gradient Method       : Method 1 - Projective/Weak Trajectory Gradient [Eq. S9]
+  Ansatzes Evaluated    : ['HEA1', 'HEA2', 'HVA']
+  Boundary Conditions   : Periodic (Ring Topology)
+  Observable (O)        : Global Periodic XXZ (Delta = 0.5)
+  System Sizes (N)      : [6, 8, 10, 12, 14, 16, 18]
+  Circuit Depth (L)     : Fixed L = 18
+  Monte Carlo Samples   : 2000 per (s, Ansatz, N, p)
+  Random Seed           : 42
+--------------------------------------------------------------------
+MEASUREMENT STRENGTH (s) TO PROBABILITY (p) SCHEDULE:
+  s = 1.00:
+    HEA1 (11 pts) : [0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25]
+    HEA2 (11 pts) : [0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25]
+    HVA ( 7 pts) : [0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15]
+====================================================================
