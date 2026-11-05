@@ -1,0 +1,28 @@
+====================================================================
+   WEAK-MEASUREMENT (s, p) EXPRESSIBILITY SCALING STUDY - CONFIG    
+====================================================================
+Timestamp               : 2026-11-05 09:25:28
+Output Directory        : data_milt
+Detected JAX Devices    : [cuda(id=0)] (Single-GPU)
+Numerical Precision     : float64 / complex128
+--------------------------------------------------------------------
+CIRCUIT & PHYSICAL HYPERPARAMETERS:
+  Metric Evaluated      : Pure-State Frame Potential F_U^(rho) & Expressibility eps_U^(rho)
+  Estimator             : Unbiased Off-Diagonal Gram Matrix U-Statistic (K*(K-1)/2 pairs)
+  Ansatzes Evaluated    : ['HEA1', 'HEA2', 'HVA']
+  Boundary Conditions   : Periodic (Ring Topology)
+  System Sizes (N)      : [6, 8, 10, 12, 14, 16, 18]
+  Circuit Depth (L)     : Fixed L = 18
+  Monte Carlo Traj (K)  : 2000 states (1999000 pairs) per (s, Ansatz, N, p)
+  Random Seed           : 42
+--------------------------------------------------------------------
+MEASUREMENT STRENGTH (s) TO PROBABILITY (p) SCHEDULE:
+  s = 1.00:
+    HEA1 (16 pts) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
+    HEA2 (16 pts) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
+    HVA (16 pts) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
+  s = 0.50:
+    HEA1 (20 pts) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+    HEA2 (20 pts) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+    HVA (20 pts) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+====================================================================
