@@ -1,0 +1,19 @@
+====================================================================
+   MIPT ENTANGLEMENT & TMI STUDY (S2_COARSE) - CONFIG
+====================================================================
+Timestamp               : 2026-10-30 15:16:19
+Sweep Mode              : s2_coarse
+Output Directory        : data_mipt
+Detected JAX Devices    : [cuda(id=0)]
+Numerical Precision     : float64 / complex128
+--------------------------------------------------------------------
+CIRCUIT & PHYSICAL HYPERPARAMETERS:
+  Ansatzes Evaluated    : ['HEA1', 'HEA2', 'HVA']
+  Boundary Conditions   : Periodic (Ring Topology)
+  System Sizes (N)      : [8, 10, 12, 14, 16, 18, 20]
+  Circuit Depth (L)     : L = 4 * N
+  Measurement Strength  : s = 1.0
+  Measurement Rates (p) : [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65]
+  Monte Carlo Samples   : 2000 per (Ansatz, N, p)
+  Random Seed           : 42
+====================================================================
