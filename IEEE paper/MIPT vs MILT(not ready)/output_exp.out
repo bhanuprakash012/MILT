@@ -1,0 +1,178 @@
+[*] Initializing multiprocessing with 40 cores.
+
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 1.0 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 87
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 26
+ -> STEP 3 (Centering Margin >= 15%): Kept 21
+
+[+] Candidates found under STRICT limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=1.0) ***
+Optimal Window : [0.375, 0.450] (Length: 0.075, Pts: 4)
+Critical p_c   : 0.3897 ± 0.0001
+Exponent nu    : 1.2899 ± 0.0020
+Fit Cost (R)   : 0.002712
+[Runner-Up Window: [0.400, 0.650] -> p_c = 0.4574, nu = 1.3548, Cost = 0.009601]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.9 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 87
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 26
+ -> STEP 3 (Centering Margin >= 15%): Kept 24
+
+[+] Candidates found under STRICT limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.9) ***
+Optimal Window : [0.425, 0.500] (Length: 0.075, Pts: 4)
+Critical p_c   : 0.4741 ± 0.0084
+Exponent nu    : 1.2605 ± 0.0405
+Fit Cost (R)   : 0.003052
+[Runner-Up Window: [0.375, 0.475] -> p_c = 0.4538, nu = 1.2394, Cost = 0.005121]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.8 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 89
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 47
+ -> STEP 3 (Centering Margin >= 15%): Kept 41
+
+[+] Candidates found under STRICT limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.8) ***
+Optimal Window : [0.475, 0.550] (Length: 0.075, Pts: 4)
+Critical p_c   : 0.4991 ± 0.0017
+Exponent nu    : 1.3755 ± 0.0442
+Fit Cost (R)   : 0.001356
+[Runner-Up Window: [0.450, 0.550] -> p_c = 0.4995, nu = 1.3689, Cost = 0.002087]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.7 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 98
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 19
+ -> STEP 3 (Centering Margin >= 15%): Kept 13
+
+[+] Candidates found under STRICT limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.7) ***
+Optimal Window : [0.475, 0.550] (Length: 0.075, Pts: 4)
+Critical p_c   : 0.4938 ± 0.0081
+Exponent nu    : 1.3646 ± 0.0278
+Fit Cost (R)   : 0.001374
+[Runner-Up Window: [0.625, 0.725] -> p_c = 0.7000, nu = 1.5277, Cost = 0.002340]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.6 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 64
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 24
+ -> STEP 3 (Centering Margin >= 15%): Kept 21
+
+[+] Candidates found under STRICT limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.6) ***
+Optimal Window : [0.525, 0.650] (Length: 0.125, Pts: 6)
+Critical p_c   : 0.6047 ± 0.0005
+Exponent nu    : 1.3788 ± 0.0354
+Fit Cost (R)   : 0.003057
+[Runner-Up Window: [0.525, 0.625] -> p_c = 0.6066, nu = 1.4667, Cost = 0.003086]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.5 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 32
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 10
+ -> STEP 3 (Centering Margin >= 15%): Kept 7
+
+[+] Candidates found under STRICT limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.5) ***
+Optimal Window : [0.725, 0.850] (Length: 0.125, Pts: 4)
+Critical p_c   : 0.7491 ± 0.0019
+Exponent nu    : 1.2949 ± 0.0369
+Fit Cost (R)   : 0.001008
+[Runner-Up Window: [0.625, 0.700] -> p_c = 0.6829, nu = 1.2160, Cost = 0.001463]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.4 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 5
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 0
+
+Applying RELAXED Filters:
+ -> STEP 1 (Physics Bounds 1.15-1.65): Kept 5
+ -> STEP 2 (Robustness pc_std<=0.02, nu_std<=0.08): Kept 2
+ -> STEP 3 (Centering Margin >= 10%): Kept 2
+
+[+] Candidates found under RELAXED limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.4) ***
+Optimal Window : [0.550, 0.650] (Length: 0.100, Pts: 5)
+Critical p_c   : 0.6036 ± 0.0064
+Exponent nu    : 1.2869 ± 0.0558
+Fit Cost (R)   : 0.019484
+[Runner-Up Window: [0.375, 0.900] -> p_c = 0.4802, nu = 1.3418, Cost = 2.924937]
+
+=====================================================================================
+--- ANALYZING: HEA2 | s = 0.3 ---
+=====================================================================================
+STEP 0: Total valid discrete windows evaluated: 300
+
+Applying STRICT Filters:
+ -> STEP 1 (Physics Bounds 1.2-1.6): Kept 5
+ -> STEP 2 (Robustness pc_std<=0.01, nu_std<=0.05): Kept 0
+
+Applying RELAXED Filters:
+ -> STEP 1 (Physics Bounds 1.15-1.65): Kept 5
+ -> STEP 2 (Robustness pc_std<=0.02, nu_std<=0.08): Kept 2
+ -> STEP 3 (Centering Margin >= 10%): Kept 2
+
+[+] Candidates found under RELAXED limits. Halting relaxation.
+
+*** BEST EXTRACTED PARAMETERS FOR HEA2 (s=0.3) ***
+Optimal Window : [0.375, 0.550] (Length: 0.175, Pts: 8)
+Critical p_c   : 0.4708 ± 0.0042
+Exponent nu    : 1.2977 ± 0.0546
+Fit Cost (R)   : 0.149387
+[Runner-Up Window: [0.375, 0.900] -> p_c = 0.4802, nu = 1.3418, Cost = 3.283414]
+
+=====================================================================================
+FINAL SUMMARY: Extracted Critical Probabilities (p_c)
+=====================================================================================
+
+Ansatz: HEA2
+  s = 1.00  -->  p_c = 0.3897 ± 0.0001
+  s = 0.90  -->  p_c = 0.4741 ± 0.0084
+  s = 0.80  -->  p_c = 0.4991 ± 0.0017
+  s = 0.70  -->  p_c = 0.4938 ± 0.0081
+  s = 0.60  -->  p_c = 0.6047 ± 0.0005
+  s = 0.50  -->  p_c = 0.7491 ± 0.0019
+  s = 0.40  -->  p_c = 0.6036 ± 0.0064
+  s = 0.30  -->  p_c = 0.4708 ± 0.0042
+
+=====================================================================================
